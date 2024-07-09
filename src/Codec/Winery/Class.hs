@@ -70,6 +70,8 @@ import Barbies.Constraints
 import Barbies.TH
 import Control.Applicative
 import Control.Exception
+import Control.Monad
+import Control.Monad.Fix
 import Control.Monad.Reader
 import qualified Data.ByteString as B
 import qualified Data.ByteString.FastBuilder as BB
