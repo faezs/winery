@@ -455,11 +455,11 @@ instance Serialise Natural where
   decodeCurrent = naturalFromInteger <$> decodeCurrent
 
 instance Serialise Char where
-  schemaGen _ = pure SChar
+  schemaGen _ = pure W.SChar
   toBuilder = toBuilder . fromEnum
   {-# INLINE toBuilder #-}
   extractor = mkExtractor $ \case
-    SChar -> pure $ \case
+    W.SChar -> pure $ \case
       TChar c -> c
       t -> throw $ InvalidTerm t
     s -> unexpectedSchema s
